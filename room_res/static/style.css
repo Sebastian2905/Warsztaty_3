@@ -1,0 +1,53 @@
+.status{
+    padding-top:25px; 
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    display: inline-block;
+    border-style: solid;
+    margin: 10px 10px;
+    background-color: rgb(41, 255, 41);
+
+}
+
+.statu{
+    padding-top:25px; 
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    display: inline-block;
+    border-style: solid;
+    margin: 10px 10px;
+    background-color: rgb(255, 8, 8);
+}
+
+
+.days{
+    display: inline-block;
+}
+
+#text{
+    width: 90px; 
+    height: 390px;
+}
+
+#list{
+    /*background-color: rgba(202, 202, 202, 0.76);*/
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+
+.room{
+    border-style: solid;
+    border-color: crimson;
+    margin: auto;
+    height: 30px;
+    width: 500px;
+    text-align: center;
+    background-color: rgb(231, 231, 231);
+    padding-top: 14px;
+    margin-top: 5px;
+    
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Informacja o sali</h1>
+
+    <p>Nazwa:   {{specific_room}}          </p>
+    <p>Liczba miejsc:   {{specific_room.seats}}    </p>
+    <p>Projektor: 
+        {% if specific_room.projector == True  %}
+        Tak
+        {% else  %}
+        Nie
+        {% endif %} 
+    </p><br>
+    <div id="bookroom">
+        <a href="http://localhost:8000/new_reservation/{{id}}/"><button type="button">Zarezerwuj</button></a>
+    </div> 
+    <p>----------------------------------------------------</p>
+    <h4>Zarezerwowana w dniach</h4>
+    {% for res in res_of_room %}
+
+        {% if res.date_of_res >= today %}
+
+        <p>{{res.date_of_res}}</p>
+        {% endif %}
+    {% endfor %}
+        
+</body>
+</html>

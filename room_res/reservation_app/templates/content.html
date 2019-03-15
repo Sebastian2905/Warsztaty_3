@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+   <a href="http://localhost:8000/newroom/">
+   <button type="button">Dodaj sale</button>
+   </a>
+   <a href="http://localhost:8000/roomlist/">
+      <button type="button">Szukaj sali</button>
+   </a>
+   <br>
+   <br>
+   {% for room in all_rooms %}
+      <!--<p>{{room}}</p>-->
+     <div><a href="http://localhost:8000/specific_room/{{room.id}}/"><button type="button">{{room}}</button></a>
+      <a href="http://localhost:8000/edit_room/{{room.id}}/"><button type="button">edit</button></a>
+       <a href="http://localhost:8000/del_room/{{room.id}}/"><button type="button">delete</button></a>
+     </div> 
+     {% for day in days %}
+         <p class="status" >
+            {% for book in room.reservation_set.all %}
+                  
+               {% if book.date_of_res == day %}
+                  X-
+               {% endif %}
+            {% endfor %}
+               
+            {{day.day}}.{{day.month}}
+         </p>
+
+       {% endfor %}
+
+
+    {% endfor%}
+  
+
+    <script>  
+         let pTags = document.getElementsByTagName("p");
+         
+         
+         for (var i = 0; i < pTags.length; i++) {
+           if ((pTags[i].innerHTML).includes("X-")) {
+            
+            
+            pTags[i].innerHTML = pTags[i].innerHTML.replace("X-","")
+            pTags[i].className = "statu"
+         
+            
+          }
+         }
+   </script>  
+{% endblock %}
